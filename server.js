@@ -1,29 +1,13 @@
-import express from 'express'
+const express = require('express')
+
+const messagesController = require('./controllers/messages.controller.js')
+const friendsController = require('./controllers/friends.controller.js')
 
 // start the express app
 const app = express()
 
 // set the port for the app to listen on
 const PORT = 3000
-
-const friends = [
-    {
-        id: 0,
-        name: "Sir Isaac Newton"
-    },
-    {
-        id: 1,
-        name: "Sir Alberto Gonzalez"
-    },
-    {
-        id: 2,
-        name: "Sir Adriano Fazio"
-    },
-    {
-        id: 3,
-        name: "Sir Leonardo Dorado"
-    }
-]
 
 // register middleware with express using the use() method
 app.use((req, res, next) => {
@@ -42,48 +26,13 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 // handle routes by using request handler methods
-app.get('/friends', (req, res) => {
-    res.json(friends)
-})
+app.get('/friends', friendsController.getFriends)
     // parameterized route with parameter => id
-app.get('/friends/:id', (req, res) => {
-    // extract the id comming from the request 
-    const friendId = Number(req.params.id)
-    // use the friendId to access the specific friend
-    const friend = friends[friendId]
-    // validate if friend exists
-    if (friend) {
-        res.json(friend)
-    } else {
-        res.status(404).json({
-            error: 'Friend does not exist'
-        })
-    }
-})
+app.get('/friends/:id', friendsController.getFriend)
+app.post('/friends', friendsController.postFriend)
 
-app.post('/friends', (req, res) => {
-    // when using data fromm body object, it's good practice to validate data
-    if (!req.body.name) {
-        return res.status(400).json({
-            error: 'Missing friend name'
-        })
-    }
-    // create new friend to add to friends list
-    const newFriend = {
-        id: friends.length,
-        name: req.body.name
-    }
-    friends.push(newFriend)
-    res.json(newFriend)
-})
-
-app.get('/messages', (req, res) => {
-    res.send('<ul><li>Hello Albert!</li></ul>')
-})
-
-app.post('/messages', (req, res) => {
-    console.log('Updating messages...')
-})
+app.get('/messages', messagesController.getMessages)
+app.post('/messages', messagesController.postMessage)
 
 // have the app listen on that port
 // The listen() function takes a PORT and Callback that runs when the server starts
