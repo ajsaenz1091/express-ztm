@@ -4,7 +4,7 @@
  I created this application to practice NodeJS and ExpressJS. The app is organized using the MVC model,
  it renders templates using a template engine called hbs(Handlebars.js).
  
- The main concepts practiced in this app where:
+ The main concepts practiced in this app were:
  
  1. How to create an Express.js server
  2. Middleware 
