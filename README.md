@@ -29,14 +29,32 @@
   ### GET
   
   [get-friends](http://localhost:3000/friends)
+
+   <img src="public/images/get-friends.png" height="100">
   
   [get-friend](http://localhost:3000/friends/1) pass a number from 0 to 3 to get a different friend
+
+   <img src="public/images/get-friend.png" height="100">
   
   [get-messages](http://localhost:3000/messages)
+
+   <img src="public/images/get-messages.png" height="100">
   
   ### POST
   
   To make POST requests I use a tool called Postman
+
+  #### Post friend 
+
+  <img src="public/images/post-friends.png" height="100">
+
+  <img src="public/images/post-friends-response.png" height="100">
+
+  #### Post messages
+
+  <img src="public/images/post-messages.png" height="100">
+
+  Again, this is a backend application so the views rendered to the client(front-end) are very simple.
   
   
   
