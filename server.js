@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 
 const friendsRouter = require('./routes/friends.router')
 const messagesRouter = require('./routes/messages.router')
@@ -24,6 +25,10 @@ app.use((req, res, next) => {
 // using middleware to parse req.body
 // without this, the req.body object will be undefined when making POST requests
 app.use(express.json())
+
+// This middleware is used to serve static websites
+// express.static() takes in a string with the relative path of the folder that we want to make available from our server
+app.use('/site', express.static(path.join(__dirname, 'public')))
 
 // use the router by calling use() just like any other middleware
 app.use('/friends', friendsRouter)
