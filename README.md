@@ -1,5 +1,9 @@
 ![Express.js](https://th.bing.com/th/id/R.08b7f631b8ae989e2b8d1bda66d3168a?rik=L5%2ftOazF7nQGAQ&riu=http%3a%2f%2fcharantechnologies.com%2fimages%2fcourses%2fexpressjs.png&ehk=i%2bBGgc8QBhKzJkExK4gz1xcOGHo5MLtoyzEllxuUiAc%3d&risl=&pid=ImgRaw&r=0)
 
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 
+
+![GitHub language count](https://img.shields.io/github/languages/count/ajsaenz1091/express-ztm) ![Profile View Counter](https://komarev.com/ghpvc/?username=ajsaenz1091)
+
 ## About
  I created this application to practice NodeJS and ExpressJS. The app is organized using the MVC model,
  it renders templates using a template engine called hbs(Handlebars.js).
