@@ -25,6 +25,18 @@ const friends = [
     }
 ]
 
+// register middleware with express using the use() method
+app.use((req, res, next) => {
+    // track time it takes for request to resolve
+    const start = Date.now()
+    // the next() function finds the endpoint to execute
+    // whe that endpoint is done executing, the flow of execution returns to the middleware
+    // to execute the lines immediately after next()
+    next()
+    const execTime = Date.now() - start
+    console.log(`${req.method} ${req.url} execution time: ${execTime}ms`)
+})
+
 // handle routes by using request handler methods
 app.get('/friends', (req, res) => {
     res.json(friends)
