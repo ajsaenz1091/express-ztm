@@ -18,7 +18,7 @@ app.use((req, res, next) => {
     // to execute the lines immediately after next()
     next()
     const execTime = Date.now() - start
-    console.log(`${req.method} ${req.url} execution time: ${execTime}ms`)
+    console.log(`${req.method} ${req.baseUrl}${req.url} execution time: ${execTime}ms`)
 })
 
 // using middleware to parse req.body

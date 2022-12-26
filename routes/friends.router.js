@@ -6,6 +6,11 @@ const friendsController = require('../controllers/friends.controller.js')
 // first create a new router then use it 
 const friendsRouter =  express.Router()
 
+// you can use middleware that applies to a specific router
+friendsRouter.use((req, res, next) => {
+    console.log('ip address:', req.ip)
+    next()
+})
 
 // handle routes by using request handler methods
 friendsRouter.get('/', friendsController.getFriends)

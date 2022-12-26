@@ -4,7 +4,7 @@ const messagesController = require('../controllers/messages.controller.js')
 
 const messagesRouter = express.Router()
 
-messagesRouter.get('/messages', messagesController.getMessages)
-messagesRouter.post('/messages', messagesController.postMessage)
+messagesRouter.get('/', messagesController.getMessages)
+messagesRouter.post('/', messagesController.postMessage)
 
 module.exports = messagesRouter
