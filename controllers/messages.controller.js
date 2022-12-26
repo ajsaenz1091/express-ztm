@@ -12,6 +12,7 @@ function getMessages(req, res) {
 
 function postMessage(req, res) {
     console.log('Updating messages...')
+    res.send("Message post endpoint successful...")
 }
 
 module.exports = {
