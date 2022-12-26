@@ -20,11 +20,26 @@
 
  You'll know the server is running when you see this in your terminal: 
 
- <img src="public/images/server-output.png" height="400">
+ <img src="public/images/server-output.png" height="100">
 
  ## Testing endpoints
 
- Once you have the server up and running, you can visit [localhost](http://localhost:3000/) 
+ Once you have the server up and running, you can visit [localhost](http://localhost:3000/). You can make two types of request, GET and POST.
+ 
+  ### GET
+  
+  [get-friends](http://localhost:3000/friends)
+  
+  [get-friend](http://localhost:3000/friends/1) pass a number from 0 to 3 to get a different friend
+  
+  [get-messages](http://localhost:3000/messages)
+  
+  ### POST
+  
+  To make POST requests I use a tool called Postman
+  
+  
+  
  
  
  
