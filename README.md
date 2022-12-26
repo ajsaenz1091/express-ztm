@@ -48,7 +48,7 @@
 
   <img src="public/images/post-friends.png" height="250">
 
-  <img src="public/images/post-friends-response.png" height="250">
+  <img src="public/images/post-friends-response.png" height="180">
 
   #### Post messages
 
