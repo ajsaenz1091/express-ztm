@@ -17,6 +17,14 @@
  ## Run locally 
  
  In order to run this app locally, make sure you clone this repository in your local machine. Instructions to [clone a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). Once you cloned the repository, navigate to the project folder and download the dependencies (all the packages listed in the package.json file necessary for the app to run) by running: `npm install`. At this point the app should be ready to run, which you can do with the following command `npm start`.
+
+ You'll know the server is running when you see this in your terminal: 
+
+ <img src="public/images/server-output.png" height="400">
+
+ ## Testing endpoints
+
+ Once you have the server up and running, you can visit [localhost](http://localhost:3000/) 
  
  
  
