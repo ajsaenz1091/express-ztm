@@ -1,7 +1,7 @@
 const express = require('express')
 
-const messagesController = require('./controllers/messages.controller.js')
-const friendsController = require('./controllers/friends.controller.js')
+const friendsRouter = require('./routes/friends.router')
+const messagesRouter = require('./routes/messages.router')
 
 // start the express app
 const app = express()
@@ -25,14 +25,10 @@ app.use((req, res, next) => {
 // without this, the req.body object will be undefined when making POST requests
 app.use(express.json())
 
-// handle routes by using request handler methods
-app.get('/friends', friendsController.getFriends)
-    // parameterized route with parameter => id
-app.get('/friends/:id', friendsController.getFriend)
-app.post('/friends', friendsController.postFriend)
+// use the router by calling use() just like any other middleware
+app.use('/friends', friendsRouter)
 
-app.get('/messages', messagesController.getMessages)
-app.post('/messages', messagesController.postMessage)
+app.use('/messages', messagesRouter)
 
 // have the app listen on that port
 // The listen() function takes a PORT and Callback that runs when the server starts
