@@ -7,6 +7,12 @@ const messagesRouter = require('./routes/messages.router')
 // start the express app
 const app = express()
 
+// using template engines to render content
+// create you engine 
+app.set('view engine', 'hbs')
+// point engine to folder containing the views
+app.set('views', path.join(__dirname, 'views'))
+
 // set the port for the app to listen on
 const PORT = 3000
 
@@ -29,6 +35,13 @@ app.use(express.json())
 // This middleware is used to serve static websites
 // express.static() takes in a string with the relative path of the folder that we want to make available from our server
 app.use('/site', express.static(path.join(__dirname, 'public')))
+// Route to render hbs template
+app.get('/', (req, res) => {
+    res.render('index', {
+        title: 'My Friends are very clever!',
+        caption: 'Let\'s go Skiing'
+    })
+})
 
 // use the router by calling use() just like any other middleware
 app.use('/friends', friendsRouter)
